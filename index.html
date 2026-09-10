@@ -473,7 +473,7 @@
         <div class="upi-id-row" style="margin-top:14px;">
           <div>
             <div style="font-size:13px;color:#555;" id="upiIdLabel">UPI ID</div>
-            <div id="upiIdText" style="font-weight:600;">suchiangwining-1@oksbi</div>
+            <div id="upiIdText" style="font-weight:600;">8787679579@ybl</div>
           </div>
           <button type="button" id="copyUpiBtn" class="gbtn outline" style="padding:6px 14px;font-size:14px;" onclick="copyUpiId()">Copy</button>
         </div>
@@ -507,7 +507,7 @@
         <div class="bank-row">
           <div>
             <div style="font-size:13px;color:#555;" id="acNoLabel">A/C No</div>
-            <div id="accountNoText" style="font-weight:600;">38706256304</div>
+            <div id="accountNoText" style="font-weight:600;">45266727041</div>
           </div>
           <button type="button" id="copyAccountBtn" class="gbtn outline">Copy</button>
         </div>
@@ -524,9 +524,9 @@
 
     <div class="card field-card" id="fc-amount-bank">
       <div class="body">
-        <div class="field-label"><span id="bankAmountLabel">How much would you like to pay now?</span><span class="req">*</span></div>
-        <input class="answer-input" type="number" id="payAmountBank" placeholder="Minimum ₹500" inputmode="numeric">
-        <div class="err-text">Enter an amount between ₹500 and the total amount</div>
+        <div class="field-label"><span id="bankAmountLabel">Advance payment is required</span><span class="req">*</span></div>
+        <input class="answer-input" type="number" id="payAmountBank" placeholder="Minimum ₹1000" inputmode="numeric">
+        <div class="err-text">Enter an amount between ₹1000 and the total amount</div>
         <div class="price-summary" id="balancePreviewBank"></div>
       </div>
     </div>
@@ -681,7 +681,7 @@ const CHILD_PRICE = 200;
 
 // The smallest amount someone is allowed to pay right now to hold
 // their spot. Shown in the note and used to check the amount they type.
-const MIN_PAY_AMOUNT = 500;
+const MIN_PAY_AMOUNT = 1000;
 
 
 
@@ -751,7 +751,7 @@ const CONTENT = {
   // Small red warning messages.
   errors: {
     required: "This is a required question",
-    amount: "Enter an amount between ₹500 and the total amount",
+    amount: "Enter an amount between ₹1000 and the total amount",
   },
 
   // Every button and link on the site.
@@ -798,7 +798,7 @@ const CONTENT = {
     header: "Scan QR Code",
     scanLabel: "SCAN AND PAY",
     note: "Save the image, then scan it with any UPI app to pay",
-    amountLabel: "How much would you like to pay now?",
+    amountLabel: "Advance payment is required",
   },
 
 
@@ -828,11 +828,11 @@ const CONTENT = {
 
 // Your UPI ID (for the "pay by UPI" option) and the name that shows
 // when someone scans your QR code or pays by UPI.
-const UPI_ID = "suchiangwining-1@oksbi";
+const UPI_ID = "8787679579@ybl";
 const UPI_PAYEE_NAME = "Team Kremchympe Official";
 
 // Your bank account details (for the "pay by Bank Transfer" option).
-const BANK_ACCOUNT_NUMBER = "38706256304";
+const BANK_ACCOUNT_NUMBER = "45266727041";
 const BANK_IFSC_CODE = "SBIN0014615";
 
 // NOTE ON THE QR CODE IMAGE ITSELF:
@@ -996,7 +996,7 @@ function renderOrderSummary(elId){
 function updateAmountSection(suffix){
   const total = getTotal();
   const input = getAmountInput(suffix);
-  input.setAttribute('placeholder', total > 0 ? `Between ₹500 and ₹${total.toLocaleString('en-IN')}` : 'Minimum ₹500');
+  input.setAttribute('placeholder', total > 0 ? `Between ₹1000 and ₹${total.toLocaleString('en-IN')}` : 'Minimum ₹1000');
 
   const box = document.getElementById('balancePreview' + suffix);
   const raw = input.value.trim();
